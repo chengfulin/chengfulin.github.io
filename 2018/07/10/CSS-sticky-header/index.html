@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Tofu&#39;s Draft">
 <meta property="og:description" content="來寫點跟本業有關的好了    昨天看到一個 CSS position 屬性值的用法感覺簡單多了～   有一種顯示當頁面往下滑超過一個 headerheader 就會黏在瀏覽器顯示區的最上方   可以怎麼做呢？例如下方範例(參考w3schools) See the Pen sticky-header-demo-fixed-position by ChengFu, Lin (@jtofu0806)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-10T13:29:11.325Z">
+<meta property="og:updated_time" content="2018-07-10T13:51:33.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS sticky header">
 <meta name="twitter:description" content="來寫點跟本業有關的好了    昨天看到一個 CSS position 屬性值的用法感覺簡單多了～   有一種顯示當頁面往下滑超過一個 headerheader 就會黏在瀏覽器顯示區的最上方   可以怎麼做呢？例如下方範例(參考w3schools) See the Pen sticky-header-demo-fixed-position by ChengFu, Lin (@jtofu0806)">
@@ -142,7 +142,7 @@
 <p>昨天看到一個 CSS position 屬性值的用法<br>感覺簡單多了～  </p>
 <p>有一種顯示<br>當頁面往下滑超過一個 header<br>header 就會黏在瀏覽器顯示區的最上方  </p>
 <p>可以怎麼做呢？<br>例如下方範例<br>(參考<a href="https://www.w3schools.com/howto/howto_js_sticky_header.asp" target="_blank" rel="noopener">w3schools</a>)</p>
-<p></p><p data-height="487" data-theme-id="dark" data-slug-hash="djbKEQ" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-fixed-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/djbKEQ/" target="_blank" rel="noopener">sticky-header-demo-fixed-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="667" data-theme-id="dark" data-slug-hash="djbKEQ" data-default-tab="css,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-fixed-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/djbKEQ/" target="_blank" rel="noopener">sticky-header-demo-fixed-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
@@ -152,13 +152,13 @@
 <p>這裡透過<code>window</code>物件的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset" target="_blank" rel="noopener"><code>pageYOffset</code></a>屬性可取得頁面下滑的距離<br>其實，它也相當於<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY" target="_blank" rel="noopener"><code>scrollY</code></a>屬性<br>不過，<code>pageYOffset</code> 對於舊型瀏覽器支援度要好一點<br>(可以看到MDN上的文件，桌面應用支援度就差在 IE 了…)  </p>
 <h3 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position: sticky"></a>position: sticky</h3><p>現在<code>position</code>多了一種屬性值<code>sticky</code><br>可以直接達到相同效果  </p>
 <p>範例  </p>
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="LBYjVP" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-sticky-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/LBYjVP/" target="_blank" rel="noopener">sticky-header-demo-sticky-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="651" data-theme-id="dark" data-slug-hash="LBYjVP" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-sticky-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/LBYjVP/" target="_blank" rel="noopener">sticky-header-demo-sticky-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 <p>javascript 程式碼可以拿掉判斷並設定樣式的部分<br>減少很多步驟  </p>
 <p>不過<br>這個屬性值當然並非所有瀏覽器都支援<br>可參考 <a href="https://caniuse.com/#search=sticky" target="_blank" rel="noopener">Can I Use</a> 網站<br>基本上 Firefox、Chrome 都可以<br>另外<br>網站上下方有註記 Chrome 可以用在 <code>th</code> 但用在 <code>thead</code> 和 <code>tr</code> 沒有效果  </p>
 <p>好奇就試了一下<br>真的耶～～<br>將 CSS 中 <code>thead th</code> 的 <code>position: sticky; top: 0;</code> 加上註解<br>再將 <code>thead</code> 或 <code>thead tr</code> 的註解拿掉<br>就可以知道了  </p>
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="GBRMOX" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="th-position-sticky-demo" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/GBRMOX/" target="_blank" rel="noopener">th-position-sticky-demo</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<p></p><p data-height="631" data-theme-id="dark" data-slug-hash="GBRMOX" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="th-position-sticky-demo" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/GBRMOX/" target="_blank" rel="noopener">th-position-sticky-demo</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 
