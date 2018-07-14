@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="本來想直接先做比較變化形態的一步步來就花了不少時間CSS 用了 flex 和 transition(我果然CSS比JS要差許多呀)(在學JS、工作的時候也很少在玩到動畫呢)順帶一提JavaScript有很多可以玩現在都可以寫app、桌面應用…     顯示上橫向顯示選取的會滑動到該位置、放大   可以再加像是檢視原尺寸圖片、全螢幕圖片(lightbox)這樣的   概念上…先將圖片列出使用fle">
+<meta name="keywords" content="CSS,JS,學習,筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[筆記]Image Slide Box">
+<meta property="og:url" content="http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/index.html">
+<meta property="og:site_name" content="Tofu&#39;s Draft">
+<meta property="og:description" content="本來想直接先做比較變化形態的一步步來就花了不少時間CSS 用了 flex 和 transition(我果然CSS比JS要差許多呀)(在學JS、工作的時候也很少在玩到動畫呢)順帶一提JavaScript有很多可以玩現在都可以寫app、桌面應用…     顯示上橫向顯示選取的會滑動到該位置、放大   可以再加像是檢視原尺寸圖片、全螢幕圖片(lightbox)這樣的   概念上…先將圖片列出使用fle">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-07-14T15:30:52.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[筆記]Image Slide Box">
+<meta name="twitter:description" content="本來想直接先做比較變化形態的一步步來就花了不少時間CSS 用了 flex 和 transition(我果然CSS比JS要差許多呀)(在學JS、工作的時候也很少在玩到動畫呢)順帶一提JavaScript有很多可以玩現在都可以寫app、桌面應用…     顯示上橫向顯示選取的會滑動到該位置、放大   可以再加像是檢視原尺寸圖片、全螢幕圖片(lightbox)這樣的   概念上…先將圖片列出使用fle">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/android-icon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+          
+        
+    
+    <!-- title -->
+    <title>[筆記]Image Slide Box</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/07/14/隨筆-累了睡了/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&text=[筆記]Image Slide Box"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&is_video=false&description=[筆記]Image Slide Box"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[筆記]Image Slide Box&body=Check out this article: http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&name=[筆記]Image Slide Box&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念上…"><span class="toc-number">1.</span> <span class="toc-text">概念上…</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-number">2.</span> <span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [筆記]Image Slide Box
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Tofu's Draft</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-07-14T14:51:49.000Z" itemprop="datePublished">2018-07-14</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/JS/">JS</a>, <a class="tag-link" href="/tags/學習/">學習</a>, <a class="tag-link" href="/tags/筆記/">筆記</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>本來想直接先做比較變化形態的<br>一步步來<br>就花了不少時間<br>CSS 用了 <code>flex</code> 和 <code>transition</code><br>(我果然CSS比JS要差許多呀)<br>(在學JS、工作的時候也很少在玩到動畫呢)<br><br><br>順帶一提<br>JavaScript有很多可以玩<br>現在都可以寫app、桌面應用…  </p>
+</blockquote>
+<hr>
+<p>顯示上<br>橫向顯示<br>選取的會滑動到該位置、放大  </p>
+<p>可以再加<br>像是檢視原尺寸圖片、全螢幕圖片(lightbox)這樣的  </p>
+<h2 id="概念上…"><a href="#概念上…" class="headerlink" title="概念上…"></a>概念上…</h2><p>先將圖片列出<br>使用flex-box方式排列顯示<br>不換行<br>水平置中對齊<br>會用flex，還有一個原因就是垂直置中<br>只要flex item的上下<code>margin</code>設為<code>auto</code>就好了<br>但是<br><strong>flex container要設<code>position</code>屬性</strong></p>
+<p>固定預設圖片高度<br>設定active變化樣式<br>動態切換  </p>
+<p>再來就是要去算<br>圖片列表顯示區塊 <em>(範例裡的是<code>.nav</code>區塊)</em> 的位移 (<code>left</code>)<br>= 顯示區的寬度 / 2 - 選取的圖片寬度 / 2 - 選取的圖片與顯示區左邊界的距離<br><em>(對應到JS第79行)</em></p>
+<p>因為考量到寬度變化<br>就會要等完成的時間，再做位移</p>
+<hr>
+<p></p><p data-height="557" data-theme-id="dark" data-slug-hash="XBmopz" data-default-tab="result" data-user="jtofu0806" data-embed-version="2" data-pen-title="XBmopz" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/XBmopz/" target="_blank" rel="noopener">XBmopz</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
+<li><p><a href="https://robots.thoughtbot.com/transitions-and-transforms" target="_blank" rel="noopener">CSS Transitions and Transforms for Beginners&gt; - Rachel Cope</a></p>
+</li>
+<li><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guid to Flexbox - CSS Tricks</a><br>CSS Tricks 有很多好參考資料</p>
+</li>
+<li><p><a href="https://placem.at/" target="_blank" rel="noopener">Placemat</a> 簡單好用圖片API，適合用來Demo作範例圖片用</p>
+</li>
+<li><p>MDN</p>
+</li>
+<li><p>w3schools</p>
+</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念上…"><span class="toc-number">1.</span> <span class="toc-text">概念上…</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-number">2.</span> <span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&text=[筆記]Image Slide Box"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&is_video=false&description=[筆記]Image Slide Box"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[筆記]Image Slide Box&body=Check out this article: http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&title=[筆記]Image Slide Box"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chengfulin.github.io/2018/07/14/筆記-Image-Slide-Box/&name=[筆記]Image Slide Box&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 ChengFu, Lin
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
