@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://chengfulin.github.io/images/img-20180716-01.png">
 <meta property="og:image" content="http://chengfulin.github.io/images/img-20180716-02.png">
 <meta property="og:image" content="http://chengfulin.github.io/images/img-20180716-03.png">
-<meta property="og:updated_time" content="2018-07-16T04:50:09.901Z">
+<meta property="og:updated_time" content="2018-07-16T07:17:54.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[筆記]如何用Telnet測試SMTP AUTH">
 <meta name="twitter:description" content="如何利用 Telnet 測試 SMTP AUTH 首先，要先取得SMTP server授權帳號與密碼的Base64字串Linux系統可以使用Perl指令，Windows可以使用Powershell，或是也可以在git bash上使用Perl指令。   Perl  1perl -MMIME::Base64 -e &amp;apos;print encode_base64(&amp;quot;username&amp;quo">
@@ -148,6 +148,9 @@
 </li>
 </ul>
 <p><img src="/images/img-20180716-01.png" alt="Perl 範例結果"></p>
+<blockquote>
+<p>注意！<br>我犯了個錯<br>當用雙引號包著‘@’要對‘@’進行跳脫<br>因此，上方的指令若username是email會變成<br><code>perl -MMIME::Base64 -e &#39;print encode_base64(&quot;user\@smtp.com&quot;)&#39;</code><br>或者改用單引號<br><code>perl -MMIME::Base64 -e &quot;print encode_base64(&#39;user\@smtp.com&#39;)&quot;</code><br><a href="https://stackoverflow.com/a/15542665/2689103" target="_blank" rel="noopener">stackoverflow]</a>  </p>
+</blockquote>
 <ul>
 <li>Powershell  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;[convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(\&quot;username\&quot;))&quot;</span><br></pre></td></tr></table></figure>
 </li>
