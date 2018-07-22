@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Learning web programming and sometimes write some poems, sentences for interest.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="ChengFu, Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[分享][歌]曾經我也想過一了百了"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Tofu&#39;s Draft"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>[分享][歌]曾經我也想過一了百了 - Tofu&#39;s Draft</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!--Favicon-->
+    
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">Tofu's Draft</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('http://placehold.it/1300x500');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/2018-07undefined/cjjwaksrs0000a0221qw6of7w" class="previous" data-title="[分享][歌]披風"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2018-07undefined/cjjvjdyoy001kkg225t7yxghi" class="next" data-title="[詩]氣球"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">[分享][歌]曾經我也想過一了百了</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <p>過去<br>有一段時間<br>心情很低落<br>還是要工作、生活<br>有一些自卑、自責的負面的情緒  </p>
+<blockquote>
+<p>現在也有些忘了為何消沉難過了<br>應該說忘了當時的感覺了吧<br>也許是身體保護自己的機制 XD<br>度過了  就會忘了那負面感覺<br>從何而來、又是什麼樣的<br>只剩下 … 懷念？</p>
+</blockquote>
+<p>那時候<br>忘記在哪聽到／找到這首歌<br>看到這場演唱會中<br>中島美嘉充滿生命、激情的演唱<br>因此喜歡上這首歌  </p>
+<p>與 Spotify 或 KKBOX 上的完全不同<br>特別喜歡這個版本的演唱  </p>
+<p>(之前一個同事無意間聽到，他說：很有激情！)<br>(很高興呀！喜歡的歌，被人認同呢)  </p>
+<hr>
+<p>現在<br>心情低落的時候<br>會想聽這首<br>算是  安慰、激勵自己吧  </p>
+<p>加油！  </p>
+<hr>
+<h2 id="Youtube-BACKUP-中字Live-中岛美嘉-曾經我也想過一了百了-僕が死のうと思ったのは-Live-原画版"><a href="#Youtube-BACKUP-中字Live-中岛美嘉-曾經我也想過一了百了-僕が死のうと思ったのは-Live-原画版" class="headerlink" title="[Youtube] [BACKUP] 中字Live 中岛美嘉 曾經我也想過一了百了 (僕が死のうと思ったのは) Live 原画版"></a>[Youtube] [BACKUP] 中字Live 中岛美嘉 曾經我也想過一了百了 (僕が死のうと思ったのは) Live 原画版</h2><p><em>posted by <a href="https://www.youtube.com/channel/UCrFkntlDudINCNaFmCRsxkA" target="_blank" rel="noopener"><strong>Thorn Ivor</strong></a></em></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QL3T2Nzcqcs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<hr>
+<h2 id="On-Spotify"><a href="#On-Spotify" class="headerlink" title="On Spotify"></a>On Spotify</h2><p><a href="https://open.spotify.com/track/1HBMi3nePzyXBkhFxnp3z5?si=DW_FWDZDTY2hx5327YJHSg" target="_blank" rel="noopener">Spotify Web Player</a></p>
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    <a href="/tags/分享/">分享</a> <a href="/tags/音樂/">音樂</a> <a href="/tags/中島美嘉/">中島美嘉</a>
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'tofudraft';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

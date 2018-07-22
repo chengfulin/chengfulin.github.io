@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="Learning web programming and sometimes write some poems, sentences for interest.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="ChengFu, Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[分享][文字]寬恕自己"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Tofu&#39;s Draft"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>[分享][文字]寬恕自己 - Tofu&#39;s Draft</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!--Favicon-->
+    
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">Tofu's Draft</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('http://placehold.it/1300x500');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/2018-07undefined/cjjvjdyp0001okg22pi7t06v9" class="previous" data-title="[詩]生日快樂"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2018-07undefined/cjjvjdyoc000jkg22cig82wd5" class="next" data-title="[詩]一杯牛奶"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">[分享][文字]寬恕自己</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <p>昨天看到的<br>一段節錄文字  </p>
+<p>由FB粉絲頁<a href="https://www.facebook.com/read.life/" target="_blank" rel="noopener">&lt;閱讀人&gt;</a>發佈的貼文<br>出自一本書《如果人生有地圖》<br>《30 Lessons for Living: Tried and True Advice from the Wisest Americans》</p>
+<blockquote>
+<p>減少後悔的備忘錄如下：<br>　<br> 一、一定要誠實。避免不誠實的行為，勿以惡小而為之。如果處事不夠光明正大，多數人將在下半輩子悔恨交加。<br>　<br> 二、向機會說「要」。在面臨新的選擇和挑戰時，說「要」，你比較不可能後悔；若是拒絕，你可能會抱憾終生。<br>　<br> 三、想旅行，請即刻出發。盡可能多去旅行，如有必要，寧可犧牲別的事情。回顧從前，多數人會將旅行冒險（無論大小）視為人生的精華，而遺憾未能前往更多地方。<br>　<br> 四、慎選伴侶。關鍵是不要倉促決定，該花多少時間就花多少時間了解你的準伴侶，並判斷長久而言你們是否適合彼此。<br>　<br> 五、有話請現在就說。如果未能趁一切來得及時表達自己的想法，最後只能悲傷地呢喃「但願能重來」。別相信「心靈感應」（ghost whisperer），你唯一能傾訴最深刻情感的時機，就是對方還健在時。  </p>
+</blockquote>
+<blockquote>
+<p> 我從自己所犯的錯誤中學到，你無法改變已經發生的事。你必須接受自己，不論美醜。這對我頗為困難，因為我的成長背景告訴我，只要你不斷加倍努力嘗試，一定可以把事情做好，做到完美。我花了好些時間，才接受事情未必會那樣運作的事實。事情是不是那樣運作，其實沒有關係，重點在於接納自己。<br>一旦做了某個決定或開啟某個方向，頻頻回首或放馬後砲，是哪裡也到不了的。很久以前，有人教了我這件事──如果你已經買了一雙鞋，就不要再看下一個櫥窗裡的鞋子。</p>
+</blockquote>
+<blockquote>
+<p>你應該寬以待人，但也要試著寬以待己。<br>我成長在一個對成果有許多憂慮和許多期望、還有很多罪惡感的家庭。但隨著年紀漸長，很重要的一點是善待自己，同時欣賞自己。因為人們都對自己太苛刻了，試著不要對自己有太多評判，放輕鬆──別太苛責自己。</p>
+</blockquote>
+<hr>
+<h3 id="FB-閱讀人-貼文"><a href="#FB-閱讀人-貼文" class="headerlink" title="[FB] 閱讀人 貼文"></a>[FB] 閱讀人 貼文</h3><iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fread.life%2Fposts%2F10160564644660057&width=500" width="500" height="587" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    <a href="/tags/分享/">分享</a> <a href="/tags/文字/">文字</a> <a href="/tags/如果人生有地圖/">如果人生有地圖</a>
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'tofudraft';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

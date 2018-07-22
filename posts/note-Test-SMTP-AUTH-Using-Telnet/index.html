@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="本業還是個網頁程式設計師，業餘愛好是寫詩。看著想著、有了些想法，寫下。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="ChengFu, Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[筆記]如何用Telnet測試SMTP AUTH"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="tofudraft"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>[筆記]如何用Telnet測試SMTP AUTH - tofudraft</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!--Favicon-->
+    
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">tofudraft</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('/images/default_cover_detail.png');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/posts/undefined/" class="previous" data-title="[隨筆]週日雜記"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/posts/undefined/" class="next" data-title="[詩]點一杯雲朵冰搖濃縮咖啡"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">[筆記]如何用Telnet測試SMTP AUTH</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <h2 id="如何利用-Telnet-測試-SMTP-AUTH"><a href="#如何利用-Telnet-測試-SMTP-AUTH" class="headerlink" title="如何利用 Telnet 測試 SMTP AUTH"></a>如何利用 Telnet 測試 SMTP AUTH</h2><ol>
+<li>首先，要先取得SMTP server授權帳號與密碼的Base64字串<br>Linux系統可以使用Perl指令，Windows可以使用Powershell，或是也可以在git bash上使用Perl指令。</li>
+</ol>
+<ul>
+<li>Perl  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">perl -MMIME::Base64 -e &apos;print encode_base64(&quot;username&quot;);&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/img-20180716-01.png" alt="Perl 範例結果"></p>
+<blockquote>
+<p>注意！<br>我犯了個錯<br>當用雙引號包著‘@’要對‘@’進行跳脫<br>因此，上方的指令若username是email會變成<br><code>perl -MMIME::Base64 -e &#39;print encode_base64(&quot;user\@smtp.com&quot;)&#39;</code><br>或者改用單引號<br><code>perl -MMIME::Base64 -e &quot;print encode_base64(&#39;user@smtp.com&#39;)&quot;</code><br><a href="https://stackoverflow.com/a/15542665/2689103" target="_blank" rel="noopener">stackoverflow]</a>  </p>
+</blockquote>
+<ul>
+<li>Powershell  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powershell &quot;[convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(\&quot;username\&quot;))&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/img-20180716-02.png" alt="Powershell 範例結果"></p>
+<ol start="2">
+<li>使用Telnet進行連線  </li>
+</ol>
+<blockquote>
+<p>Windows系統需先至控制台&gt;程式與功能&gt;開啟關閉Windows功能<br>將Telnet 客戶端(Client)勾選</p>
+</blockquote>
+<p>指令：telnet [要連線的smtp server位置] PORT<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet mailserver.com 25</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>跟server打招呼</li>
+</ol>
+<p>(我要來找你了！這樣的意思嗎)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EHLO mailserver.com</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>告訴server要進行驗證登入  </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AUTH LOGIN</span><br></pre></td></tr></table></figure>
+<p>server 會回應<code>334 VXNlcm5hbWU6</code>的內容，後面其實是”Username:”的Base64字串<br>此時輸入一開始要記下來的帳號Base64字串<br>接著，server 再回應<code>334 UGFzc3dvcmQ6</code>，這就是”Password:”的Base64字串<br>便輸入密碼的Base64字串</p>
+<blockquote>
+<p>好奇上面Base64字串內容，Windows系統將Powershell指令倒裝一下就好了<br><img src="/images/img-20180716-03.png" alt="Auth Login Server Response Base64 string"></p>
+</blockquote>
+<p>接著你就會看到訊息是驗證成功或失敗了。</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
+<li><p><a href="https://www.ndchost.com/wiki/mail/test-smtp-auth-telnet" target="_blank" rel="noopener">How to Test SMTP AUTH using Telnet</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/a/37049844/2689103" target="_blank" rel="noopener">Base64 Encode “string” - command-line Windows - StackOverflow</a></p>
+</li>
+</ol>
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    <a href="/tags/學習/">學習</a> <a href="/tags/筆記/">筆記</a> <a href="/tags/command/">command</a> <a href="/tags/telnet/">telnet</a> <a href="/tags/SMTP/">SMTP</a>
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'tofudraft';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

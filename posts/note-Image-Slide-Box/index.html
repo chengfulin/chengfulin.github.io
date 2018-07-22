@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="本業還是個網頁程式設計師，業餘愛好是寫詩。看著想著、有了些想法，寫下。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="ChengFu, Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[筆記]Image Slide Box"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="tofudraft"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>[筆記]Image Slide Box - tofudraft</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!--Favicon-->
+    
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    
+
+</head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">tofudraft</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('/images/default_cover_detail.png');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/posts/undefined/" class="previous" data-title="[詩]點一杯雲朵冰搖濃縮咖啡"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/posts/undefined/" class="next" data-title="[隨筆]累了睡了"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">[筆記]Image Slide Box</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <blockquote>
+<p>本來想直接先做比較變化形態的<br>一步步來<br>就花了不少時間<br>CSS 用了 <code>flex</code> 和 <code>transition</code><br>(我果然CSS比JS要差許多呀)<br>(在學JS、工作的時候也很少在玩到動畫呢)<br><br><br>順帶一提<br>JavaScript有很多可以玩<br>現在都可以寫app、桌面應用…  </p>
+</blockquote>
+<hr>
+<p>顯示上<br>橫向顯示<br>選取的會滑動到該位置、放大  </p>
+<p>可以再加<br>像是檢視原尺寸圖片、全螢幕圖片(lightbox)這樣的  </p>
+<h2 id="概念上…"><a href="#概念上…" class="headerlink" title="概念上…"></a>概念上…</h2><p>先將圖片列出<br>使用flex-box方式排列顯示<br>不換行<br>水平置中對齊<br>會用flex，還有一個原因就是垂直置中<br>只要flex item的上下<code>margin</code>設為<code>auto</code>就好了<br>但是<br><strong>flex container要設<code>position</code>屬性</strong></p>
+<p>固定預設圖片高度<br>設定active變化樣式<br>動態切換  </p>
+<p>再來就是要去算<br>圖片列表顯示區塊 <em>(範例裡的是<code>.nav</code>區塊)</em> 的位移 (<code>left</code>)<br>= 顯示區的寬度 / 2 - 選取的圖片寬度 / 2 - 選取的圖片與顯示區左邊界的距離<br><em>(對應到JS第79行)</em></p>
+<p>因為考量到寬度變化<br>就會要等完成的時間，再做位移</p>
+<hr>
+<p></p><p data-height="557" data-theme-id="dark" data-slug-hash="XBmopz" data-default-tab="result" data-user="jtofu0806" data-embed-version="2" data-pen-title="XBmopz" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/XBmopz/" target="_blank" rel="noopener">XBmopz</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
+<li><p><a href="https://robots.thoughtbot.com/transitions-and-transforms" target="_blank" rel="noopener">CSS Transitions and Transforms for Beginners&gt; - Rachel Cope</a></p>
+</li>
+<li><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guid to Flexbox - CSS Tricks</a><br>CSS Tricks 有很多好參考資料</p>
+</li>
+<li><p><a href="https://placem.at/" target="_blank" rel="noopener">Placemat</a> 簡單好用圖片API，適合用來Demo作範例圖片用</p>
+</li>
+<li><p>MDN</p>
+</li>
+<li><p>w3schools</p>
+</li>
+</ol>
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    <a href="/tags/CSS/">CSS</a> <a href="/tags/JS/">JS</a> <a href="/tags/學習/">學習</a> <a href="/tags/筆記/">筆記</a>
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="/js/jquery.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'tofudraft';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>
