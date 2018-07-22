@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="本業還是個網頁程式設計師，業餘愛好是寫詩。看著想著、有了些想法，寫下。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="ChengFu, Lin">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[筆記]CSS sticky header"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="tofudraft"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>[筆記]CSS sticky header - tofudraft</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/sass/main.css">
+
+    <!--[if lt IE 8]>
+        <script src="/js/ie/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" href="/sass/ie8.css">
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="/sass/ie9.css">
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/Personal_Logo-01.svg" alt="" /></span><span class="title">tofudraft</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
+            <li>
+                <a href="/">Home</a>
+            </li>
+        
+            <li>
+                <a href="/about">About</a>
+            </li>
+        
+    </ul>
+</nav>
+
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                
+
+    <h1>[筆記]CSS sticky header</h1>
+
+
+
+<!-- Gallery -->
+
+
+<!-- Content -->
+<blockquote>
+<p>來寫點跟本業有關的好了  </p>
+</blockquote>
+<p>昨天看到一個 CSS position 屬性值的用法<br>感覺簡單多了～  </p>
+<p>有一種顯示<br>當頁面往下滑超過一個 header<br>header 就會黏在瀏覽器顯示區的最上方  </p>
+<p>可以怎麼做呢？<br>例如下方範例<br>(參考<a href="https://www.w3schools.com/howto/howto_js_sticky_header.asp" target="_blank" rel="noopener">w3schools</a>)</p>
+<p></p><p data-height="667" data-theme-id="dark" data-slug-hash="djbKEQ" data-default-tab="css,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-fixed-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/djbKEQ/" target="_blank" rel="noopener">sticky-header-demo-fixed-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>斷頁面滾動位移，是否大於 header 距離整個頁面頁首的距離<br>若是，則將 header 設為<code>position: fixed</code> 與<code>top: 0</code>  </p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>當<code>HTMLElement</code>設為 <code>position: fixed</code><br>表示它的位置是對應於整個<code>window</code>也就是瀏覽器可視範圍的<br>當<code>position: fixed</code>時<br><code>top</code>屬性表示距離顯示區的上緣距離<br>因此要將 header 固定在最上方，只要設定<code>top: 0</code></p>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.pageYOffset &gt; stickyOffset) &#123;</span><br><span class="line">    <span class="comment">// 當頁面向下滾動位移 &gt; header 一開始距離頁首位置</span></span><br><span class="line">    <span class="comment">// 設定 CSS 自訂 sticky 類別樣式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 否則</span></span><br><span class="line">    <span class="comment">// 對 header 移除 CSS 自訂 sticky 類別樣式</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這裡透過<code>window</code>物件的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset" target="_blank" rel="noopener"><code>pageYOffset</code></a>屬性可取得頁面下滑的距離<br>其實，它也相當於<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY" target="_blank" rel="noopener"><code>scrollY</code></a>屬性<br>不過，<code>pageYOffset</code> 對於舊型瀏覽器支援度要好一點<br>(可以看到MDN上的文件，桌面應用支援度就差在 IE 了…)  </p>
+<h3 id="position-sticky"><a href="#position-sticky" class="headerlink" title="position: sticky"></a>position: sticky</h3><p>現在<code>position</code>多了一種屬性值<code>sticky</code><br>可以直接達到相同效果  </p>
+<p>範例  </p>
+<p></p><p data-height="651" data-theme-id="dark" data-slug-hash="LBYjVP" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="sticky-header-demo-sticky-position" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/LBYjVP/" target="_blank" rel="noopener">sticky-header-demo-sticky-position</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<p>javascript 程式碼可以拿掉判斷並設定樣式的部分<br>減少很多步驟  </p>
+<p>不過<br>這個屬性值當然並非所有瀏覽器都支援<br>可參考 <a href="https://caniuse.com/#search=sticky" target="_blank" rel="noopener">Can I Use</a> 網站<br>基本上 Firefox、Chrome 都可以<br>另外<br>網站上下方有註記 Chrome 可以用在 <code>th</code> 但用在 <code>thead</code> 和 <code>tr</code> 沒有效果  </p>
+<p>好奇就試了一下<br>真的耶～～<br>將 CSS 中 <code>thead th</code> 的 <code>position: sticky; top: 0;</code> 加上註解<br>再將 <code>thead</code> 或 <code>thead tr</code> 的註解拿掉<br>就可以知道了  </p>
+<p></p><p data-height="631" data-theme-id="dark" data-slug-hash="GBRMOX" data-default-tab="html,result" data-user="jtofu0806" data-embed-version="2" data-pen-title="th-position-sticky-demo" class="codepen">See the Pen <a href="https://codepen.io/jtofu0806/pen/GBRMOX/" target="_blank" rel="noopener">th-position-sticky-demo</a> by ChengFu, Lin (<a href="https://codepen.io/jtofu0806" target="_blank" rel="noopener">@jtofu0806</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://www.w3schools.com/howto/howto_js_sticky_header.asp" target="_blank" rel="noopener">w3schools - How TO - On Scroll Header</a></li>
+<li><a href="https://caniuse.com/#search=sticky" target="_blank" rel="noopener">Can I Use - sticky ?</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/pageYOffset" target="_blank" rel="noopener">MDN - Window.pageYOffset</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY" target="_blank" rel="noopener">MDN - Window.scrollY</a></li>
+<li><a href="https://www.w3schools.com/cssref/pr_class_position.asp" target="_blank" rel="noopener">w3schools - CSS position property</a></li>
+</ul>
+
+
+<!-- Tags -->
+
+
+
+<div class="tags">
+    <a href="/tags/CSS/" class="button small">CSS</a> <a href="/tags/JS/" class="button small">JS</a> <a href="/tags/w3schools/" class="button small">w3schools</a> <a href="/tags/MDN/" class="button small">MDN</a> <a href="/tags/學習/" class="button small">學習</a> <a href="/tags/筆記/" class="button small">筆記</a>
+</div>
+
+
+
+<!-- Comments -->
+<div>
+    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+</div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                
+                
+                    <li><a href="https://www.instagram.com/tofudraft/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                
+                    <li><a href="http://github.com/chengfulin/" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                
+                
+                
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; ChengFu, Lin. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- skel -->
+<script src="/js/skel.min.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/util.js"></script>
+
+<!--[if lte IE 8]>
+<script src="/js/ie/respond.min.js"></script>
+<![endif]-->
+
+<!-- Custom Code -->
+<script src="/js/main.js"></script>
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'klugjo';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+</body>
+
+</html>

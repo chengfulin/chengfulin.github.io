@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--Description-->
     
@@ -34,14 +34,18 @@
     <title>tofudraft</title>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/sass/main.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 8]>
+        <script src="/js/ie/html5shiv.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" href="/sass/ie8.css">
+    <![endif]-->
+
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <link rel="stylesheet" href="/sass/ie9.css">
     <![endif]-->
 
     <!-- Gallery -->
@@ -62,186 +66,264 @@
 
 
 
-    <!--Favicon-->
-    
-        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    
-
 </head>
 
 <body>
 
-<!-- Menu -->
-<!-- Navigation -->
-<header>
-    <div class="logo">
-        <a href="/">tofudraft</a>
-    </div><!-- end logo -->
+    <div id="wrapper">
 
-    <div id="menu_icon"></div>
-    <nav>
-        <ul>
-            
+        <!-- Menu -->
+        <!-- Header -->
+<header id="header">
+    <div class="inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo">
+            <span class="symbol"><img src="/images/Personal_Logo-01.svg" alt="" /></span><span class="title">tofudraft</span>
+        </a>
+
+        <!-- Nav -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        
             <li>
                 <a href="/">Home</a>
             </li>
-            
+        
             <li>
-                <a href="/archives">Archives</a>
+                <a href="/about">About</a>
             </li>
-            
-        </ul>
-    </nav><!-- end navigation menu -->
-
-    <div class="footer clearfix">
-        <ul class="social clearfix">
-            
-            
-            
-            
-            
-            
-            
-            
-        </ul><!-- end social -->
-
-        <div class="rights">
-            <p>Copyright © 2014 magnetic.</p>
-            <p>Template by <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
-            <p>Hexo Theme by <a href="http://www.codeblocq.com/">Jonathan K.</a></p>
-        </div><!-- end rights -->
-    </div ><!-- end footer -->
-</header><!-- end header -->
-
-
-<!-- Main Content -->
-<section class="main clearfix">
-    
-        <div class="work">
-    <a href="/posts/announce-Breaking-Change-20180722/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>Breaking Change 2018-07-22</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]泡沫</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[隨筆]牽手</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[隨筆]抱著風箏的孩子</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]生日快樂</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/share-text-Forgive-Yourself/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[分享][文字]寬恕自己</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/poem-A-Cup-of-Milk/">
-        <img src="/images/posts/poem-A-Cup-of-Milk.jpg" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]一杯牛奶</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]問候-B</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]問候-A</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-        <div class="work">
-    <a href="/posts/undefined/">
-        <img src="/images/default_cover_index.png" class="media" alt=""/>
-        <div class="caption">
-            <div class="work_title">
-                <h1>[詩]單純</h1>
-            </div>
-        </div>
-    </a>
-</div>
-    
-    
-    <div class="pagination-container">
         
-        
-            <div class="pagination"><a href="/page/2/">Older Posts</a></div>
-        
-    </div>
+    </ul>
+</nav>
 
+
+        <div id="main">
+            <div class="inner">
+
+                <!-- Main Content -->
+                <header>
+    <h1>喜歡寫詩、寫點東西的網頁工程師</h1>
+    <p>放一些自己的作品、分享、心情紀錄(還有筆記)</p>
+</header>
+
+<section class="tiles">
+    
+        
+
+<article class="style1">
+    <span class="image">
+        <img src="/images/default_cover_index.png" alt="" />
+    </span>
+    <a href="/posts/公告-Breaking-Change-20180722/">
+        <h2>Breaking Change 2018-07-22</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style2">
+    <span class="image">
+        <img src="/images/posts/img-20180721-02.jpg" alt="" />
+    </span>
+    <a href="/posts/詩-泡沫/">
+        <h2>[詩]泡沫</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style3">
+    <span class="image">
+        <img src="/images/posts/img-20180721-01.jpg" alt="" />
+    </span>
+    <a href="/posts/隨筆-牽手/">
+        <h2>[隨筆]牽手</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style4">
+    <span class="image">
+        <img src="/images/posts/img-20180721-02.jpg" alt="" />
+    </span>
+    <a href="/posts/隨筆-抱著風箏的孩子/">
+        <h2>[隨筆]抱著風箏的孩子</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style5">
+    <span class="image">
+        <img src="/images/posts/img-20180721-01.jpg" alt="" />
+    </span>
+    <a href="/posts/詩-生日快樂/">
+        <h2>[詩]生日快樂</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style6">
+    <span class="image">
+        <img src="/images/default_cover_index.png" alt="" />
+    </span>
+    <a href="/posts/分享-文字-寬恕自己/">
+        <h2>[分享][文字]寬恕自己</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style7">
+    <span class="image">
+        <img src="/images/posts/img-20180719-01.jpg" alt="" />
+    </span>
+    <a href="/posts/詩-一杯牛奶/">
+        <h2>[詩]一杯牛奶</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style8">
+    <span class="image">
+        <img src="/images/default_cover_index.png" alt="" />
+    </span>
+    <a href="/posts/詩-問候-B/">
+        <h2>[詩]問候-B</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style9">
+    <span class="image">
+        <img src="/images/default_cover_index.png" alt="" />
+    </span>
+    <a href="/posts/詩-問候-A/">
+        <h2>[詩]問候-A</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
+        
+
+<article class="style10">
+    <span class="image">
+        <img src="/images/default_cover_index.png" alt="" />
+    </span>
+    <a href="/posts/詩-單純/">
+        <h2>[詩]單純</h2>
+        <div class="content">
+            <p></p>
+        </div>
+    </a>
+</article>
+    
 </section>
 
-<!-- After footer scripts -->
 
+    <div class="pagination-container">
+        <div class="pagination disabled"><a href="/"><i class="icon fa-caret-left"></i></a></div>
+        <div class="pagination "><a href="/page/2/"><i class="icon fa-caret-right"></i></a></div>
+    </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <section>
+            <h2>About</h2>
+            <div>
+                This theme was initially developed by <a href="http://html5up.net" target="_blank">HTML5 UP</a>. It is adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>.<br />The source code is available on <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank">GitHub</a>.
+            </div>
+        </section>
+        <section>
+            <h2>Follow</h2>
+            <ul class="icons">
+                
+                
+                
+                    <li><a href="https://www.instagram.com/tofudraft/" class="icon style2 fa-instagram" target="_blank" ><span class="label">Instagram</span></a></li>
+                
+                
+                
+                    <li><a href="http://github.com/chengfulin/" class="icon style2 fa-github" target="_blank" ><span class="label">GitHub</span></a></li>
+                
+                
+                
+                
+                
+                
+            </ul>
+        </section>
+        <ul class="copyright">
+            <li>&copy; ChengFu, Lin. All rights reserved</li>
+            <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+            <li>Hexo: <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></li>
+        </ul>
+    </div>
+</footer>
+    </div>
+
+    <!-- After footer scripts -->
+    
 <!-- jQuery -->
-<script src="/js/jquery.js"></script>
+<script src="/js/jquery.min.js"></script>
+
+<!-- skel -->
+<script src="/js/skel.min.js"></script>
+
+<!-- Custom Code -->
+<script src="/js/util.js"></script>
+
+<!--[if lte IE 8]>
+<script src="/js/ie/respond.min.js"></script>
+<![endif]-->
 
 <!-- Custom Code -->
 <script src="/js/main.js"></script>
@@ -252,7 +334,7 @@
 <!-- Disqus Comments -->
 
 <script type="text/javascript">
-    var disqus_shortname = 'tofudraft';
+    var disqus_shortname = 'klugjo';
 
     (function(){
         var dsq = document.createElement('script');
