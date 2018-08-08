@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前情提要…妹妹做一個專案吧會有個感測器不斷讀取資料然後要讀取資料，判讀數值，做些簡單的應用但是她對程式的熟悉程度就像我以前剛進入學校、新環境那樣吧而她現在主要是學設計的該說很有野心呢？還是很敢嘗試呢？    同時讀取與寫入檔案這個範例專案，在GitHub上   根據妹妹提出的想法主要目的是看看兩支程式如果想用檔案作為交流的內容要如何做？(如果用Background Task的方式去做我也不熟悉，">
+<meta name="keywords" content="學習,筆記,C#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[筆記]同時讀取與寫入檔案C#">
+<meta property="og:url" content="http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/index.html">
+<meta property="og:site_name" content="tofudraft">
+<meta property="og:description" content="前情提要…妹妹做一個專案吧會有個感測器不斷讀取資料然後要讀取資料，判讀數值，做些簡單的應用但是她對程式的熟悉程度就像我以前剛進入學校、新環境那樣吧而她現在主要是學設計的該說很有野心呢？還是很敢嘗試呢？    同時讀取與寫入檔案這個範例專案，在GitHub上   根據妹妹提出的想法主要目的是看看兩支程式如果想用檔案作為交流的內容要如何做？(如果用Background Task的方式去做我也不熟悉，">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://chengfulin.github.io/images/posts/img-20180809-01.png">
+<meta property="og:updated_time" content="2018-08-08T17:44:04.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[筆記]同時讀取與寫入檔案C#">
+<meta name="twitter:description" content="前情提要…妹妹做一個專案吧會有個感測器不斷讀取資料然後要讀取資料，判讀數值，做些簡單的應用但是她對程式的熟悉程度就像我以前剛進入學校、新環境那樣吧而她現在主要是學設計的該說很有野心呢？還是很敢嘗試呢？    同時讀取與寫入檔案這個範例專案，在GitHub上   根據妹妹提出的想法主要目的是看看兩支程式如果想用檔案作為交流的內容要如何做？(如果用Background Task的方式去做我也不熟悉，">
+<meta name="twitter:image" content="http://chengfulin.github.io/images/posts/img-20180809-01.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/android-icon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+          
+        
+    
+    <!-- title -->
+    <title>[筆記]同時讀取與寫入檔案C#</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/posts/詩-父親節快樂/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&text=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&is_video=false&description=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[筆記]同時讀取與寫入檔案C#&body=Check out this article: http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&name=[筆記]同時讀取與寫入檔案C#&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同時讀取與寫入檔案"><span class="toc-number">1.</span> <span class="toc-text">同時讀取與寫入檔案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Write-Program"><span class="toc-number">1.1.</span> <span class="toc-text">Write.Program</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Read-Program"><span class="toc-number">1.2.</span> <span class="toc-text">Read.Program</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-number">2.</span> <span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        [筆記]同時讀取與寫入檔案C#
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">tofudraft</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-08-08T17:02:49.000Z" itemprop="datePublished">2018-08-09</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/C/">C#</a>, <a class="tag-link" href="/tags/學習/">學習</a>, <a class="tag-link" href="/tags/筆記/">筆記</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>前情提要…<br>妹妹做一個專案吧<br>會有個感測器不斷讀取資料<br>然後要讀取資料，判讀數值，做些簡單的應用<br>但是<br>她對程式的熟悉程度<br>就像我以前剛進入學校、新環境那樣吧<br>而她現在主要是學設計的<br>該說很有野心呢？<br>還是很敢嘗試呢？  </p>
+</blockquote>
+<h2 id="同時讀取與寫入檔案"><a href="#同時讀取與寫入檔案" class="headerlink" title="同時讀取與寫入檔案"></a>同時讀取與寫入檔案</h2><p>這個範例專案，在<a href="https://github.com/chengfulin/csharp-read-and-write-simultaneously" target="_blank" rel="noopener">GitHub</a>上  </p>
+<p>根據妹妹提出的想法<br>主要目的是看看<br>兩支程式如果想用檔案作為交流的內容<br>要如何做？<br>(如果用Background Task的方式去做<br>我也不熟悉，對她也太難了)</p>
+<p>整個方案(Solution)中，有兩個專案 Write 與 Read<br>一個負責寫檔，一個負責讀檔。  </p>
+<p><img src="/images/posts/img-20180809-01.png" alt="專案結構"></p>
+<p>個別的主程式如下：  </p>
+<h3 id="Write-Program"><a href="#Write-Program" class="headerlink" title="Write.Program"></a>Write.Program</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">string</span> filePath = Path.Combine(Path.GetFullPath(Path.Combine(<span class="string">$"<span class="subst">&#123;AppDomain.CurrentDomain.BaseDirectory&#125;</span>"</span>, <span class="string">"..\\..\\..\\.."</span>)), <span class="string">"files\\out.json"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">using</span> (<span class="keyword">var</span> file = <span class="keyword">new</span> FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> writer = <span class="keyword">new</span> StreamWriter(file);</span><br><span class="line">            writer.WriteLine(DateTime.Now.ToLongTimeString());</span><br><span class="line">            writer.Flush();</span><br><span class="line">            Thread.Sleep(<span class="number">500</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Read-Program"><a href="#Read-Program" class="headerlink" title="Read.Program"></a>Read.Program</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">string</span> filePath = Path.Combine(Path.GetFullPath(Path.Combine(<span class="string">$"<span class="subst">&#123;AppDomain.CurrentDomain.BaseDirectory&#125;</span>"</span>, <span class="string">"..\\..\\..\\.."</span>)), <span class="string">"files\\out.json"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> (<span class="keyword">var</span> file = <span class="keyword">new</span> FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> reader = <span class="keyword">new</span> StreamReader(file);</span><br><span class="line">            <span class="keyword">var</span> line = reader.ReadLine();</span><br><span class="line">            Console.WriteLine(line);</span><br><span class="line">            Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>共用的檔案預期會放在方案資料夾的根目錄下 <code>&lt;Solution Dir&gt;\files\</code><br>為了取得該檔案相對專案路徑，使用 <code>AppDomain.CurrentDomain.BaseDirectory</code><br>取得程式執行檔所在資料夾位置，再取得該檔案相對路徑。</p>
+</li>
+<li><p>讀檔與寫檔，依據其目的，分別建立 <code>FileStream</code> 並給予不同的檔案存取與共用的權限<br>Write要能寫，因此需要<code>FileAccess.Write</code>，並要讓Read同時也可以讀，設定<code>FileShare.Read</code><br>Read要能讀，因此需要<code>FileAccess.Read</code>，並要讓Write同時也可以寫，設定<code>FileShare.ReadWrite</code></p>
+</li>
+</ul>
+<p>最後，<br>依序分別執行Write、Read<br>就可以看到效果了。</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ol>
+<li><a href="https://stackoverflow.com/a/14549856" target="_blank" rel="noopener">How to get my project path? - stackoverflow</a></li>
+<li><a href="https://stackoverflow.com/a/3817526" target="_blank" rel="noopener">simultaneous read-write a file in C# - stackoverflow</a></li>
+</ol>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同時讀取與寫入檔案"><span class="toc-number">1.</span> <span class="toc-text">同時讀取與寫入檔案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Write-Program"><span class="toc-number">1.1.</span> <span class="toc-text">Write.Program</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Read-Program"><span class="toc-number">1.2.</span> <span class="toc-text">Read.Program</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#參考資料"><span class="toc-number">2.</span> <span class="toc-text">參考資料</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&text=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&is_video=false&description=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=[筆記]同時讀取與寫入檔案C#&body=Check out this article: http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&title=[筆記]同時讀取與寫入檔案C#"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chengfulin.github.io/posts/筆記-同時讀取與寫入檔案Csharp/&name=[筆記]同時讀取與寫入檔案C#&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 ChengFu, Lin
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-88865525-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
